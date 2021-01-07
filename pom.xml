@@ -21,7 +21,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
         <scm.connection>scm:git:https://github.com/concord-workflow/concord-maven-resolver-transport-http.git</scm.connection>
-        <maven.resolver.version>1.6.1</maven.resolver.version>
+        <maven.resolver.version>1.4.1</maven.resolver.version>
     </properties>
 
     <dependencies>
