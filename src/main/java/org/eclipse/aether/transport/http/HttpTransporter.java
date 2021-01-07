@@ -137,7 +137,7 @@ public class HttpTransporter
 
         state = new LocalState( session, repository, new SslConfig( session, repoAuthContext ) );
 
-        boolean isPreemptiveAuth = Boolean.parseBoolean(repoAuthContext.get("preemptiveAuth"));
+        boolean isPreemptiveAuth = repoAuthContext != null && Boolean.parseBoolean(repoAuthContext.get("preemptiveAuth"));
         if (isPreemptiveAuth) {
             int port = "https".equals(baseUri.getScheme()) ? 443 : 80;
             HttpHost host = new HttpHost(baseUri.getHost(), port, baseUri.getScheme());
