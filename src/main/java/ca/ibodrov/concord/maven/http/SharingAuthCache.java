@@ -1,4 +1,4 @@
-package org.eclipse.aether.transport.http;
+package ca.ibodrov.concord.maven.http;
 
 /*
  * Licensed to the Apache Software Foundation (ASF) under one

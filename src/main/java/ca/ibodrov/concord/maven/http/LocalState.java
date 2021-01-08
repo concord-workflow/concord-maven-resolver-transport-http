@@ -1,4 +1,4 @@
-package org.eclipse.aether.transport.http;
+package ca.ibodrov.concord.maven.http;
 
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
@@ -28,7 +28,7 @@ import org.apache.http.auth.AuthScheme;
 import org.apache.http.conn.ClientConnectionManager;
 import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.repository.RemoteRepository;
-import org.eclipse.aether.transport.http.GlobalState.CompoundKey;
+import ca.ibodrov.concord.maven.http.GlobalState.CompoundKey;
 
 /**
  * Container for HTTP-related state that can be shared across invocations of the transporter to optimize the

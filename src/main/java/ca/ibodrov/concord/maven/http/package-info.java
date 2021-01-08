@@ -1,5 +1,4 @@
-package org.eclipse.aether.transport.http;
-
+// CHECKSTYLE_OFF: RegexpHeader
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -18,27 +17,9 @@ package org.eclipse.aether.transport.http;
  * specific language governing permissions and limitations
  * under the License.
  */
-
-import java.net.URI;
-
-import org.apache.http.client.methods.HttpRequestBase;
-
 /**
- * WebDAV MKCOL request to create parent directories.
+ * Support for downloads/uploads via the HTTP and HTTPS protocols. The current implementation is backed by
+ * <a href="http://hc.apache.org/httpcomponents-client-ga/" target="_blank">Apache HttpClient</a>.
  */
-final class HttpMkCol
-    extends HttpRequestBase
-{
+package ca.ibodrov.concord.maven.http;
 
-    HttpMkCol( URI uri )
-    {
-        setURI( uri );
-    }
-
-    @Override
-    public String getMethod()
-    {
-        return "MKCOL";
-    }
-
-}

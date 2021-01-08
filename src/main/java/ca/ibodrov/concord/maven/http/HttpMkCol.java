@@ -1,4 +1,5 @@
-// CHECKSTYLE_OFF: RegexpHeader
+package ca.ibodrov.concord.maven.http;
+
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -17,9 +18,27 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-/**
- * Support for downloads/uploads via the HTTP and HTTPS protocols. The current implementation is backed by
- * <a href="http://hc.apache.org/httpcomponents-client-ga/" target="_blank">Apache HttpClient</a>.
- */
-package org.eclipse.aether.transport.http;
 
+import java.net.URI;
+
+import org.apache.http.client.methods.HttpRequestBase;
+
+/**
+ * WebDAV MKCOL request to create parent directories.
+ */
+final class HttpMkCol
+    extends HttpRequestBase
+{
+
+    HttpMkCol( URI uri )
+    {
+        setURI( uri );
+    }
+
+    @Override
+    public String getMethod()
+    {
+        return "MKCOL";
+    }
+
+}
