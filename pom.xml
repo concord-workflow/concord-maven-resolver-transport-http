@@ -10,7 +10,7 @@
 
     <groupId>ca.ibodrov.concord.maven</groupId>
     <artifactId>concord-maven-resolver-transport-http</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5-SNAPSHOT</version>
     <packaging>takari-jar</packaging>
 
     <properties>
@@ -84,8 +84,4 @@
             </plugin>
         </plugins>
     </build>
-
-  <scm>
-    <tag>0.0.4</tag>
-  </scm>
 </project>
