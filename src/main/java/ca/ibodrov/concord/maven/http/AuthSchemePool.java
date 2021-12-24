@@ -22,7 +22,7 @@ package ca.ibodrov.concord.maven.http;
 import java.util.LinkedList;
 
 import org.apache.http.auth.AuthScheme;
-import org.apache.http.client.params.AuthPolicy;
+import org.apache.http.client.config.AuthSchemes;
 import org.apache.http.impl.auth.BasicScheme;
 
 /**
@@ -47,7 +47,7 @@ final class AuthSchemePool
         {
             authScheme = authSchemes.removeLast();
         }
-        else if ( AuthPolicy.BASIC.equalsIgnoreCase( schemeName ) )
+        else if ( AuthSchemes.BASIC.equalsIgnoreCase( schemeName ) )
         {
             authScheme = new BasicScheme();
         }

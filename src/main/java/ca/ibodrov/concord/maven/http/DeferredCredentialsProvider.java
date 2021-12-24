@@ -55,11 +55,13 @@ final class DeferredCredentialsProvider
         factories.put( authScope, factory );
     }
 
+    @Override
     public void setCredentials( AuthScope authScope, Credentials credentials )
     {
         delegate.setCredentials( authScope, credentials );
     }
 
+    @Override
     public Credentials getCredentials( AuthScope authScope )
     {
         synchronized ( factories )
@@ -78,6 +80,7 @@ final class DeferredCredentialsProvider
         return delegate.getCredentials( authScope );
     }
 
+    @Override
     public void clear()
     {
         delegate.clear();
@@ -87,6 +90,7 @@ final class DeferredCredentialsProvider
     {
 
         Credentials newCredentials();
+
     }
 
     static class BasicFactory
@@ -100,6 +104,7 @@ final class DeferredCredentialsProvider
             this.authContext = authContext;
         }
 
+        @Override
         public Credentials newCredentials()
         {
             String username = authContext.get( AuthenticationContext.USERNAME );
@@ -123,6 +128,7 @@ final class DeferredCredentialsProvider
             this.authContext = authContext;
         }
 
+        @Override
         public Credentials newCredentials()
         {
             String username = authContext.get( AuthenticationContext.USERNAME );

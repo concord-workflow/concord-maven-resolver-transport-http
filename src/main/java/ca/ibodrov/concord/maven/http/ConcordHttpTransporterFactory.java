@@ -21,6 +21,8 @@ package ca.ibodrov.concord.maven.http;
 
 import javax.inject.Named;
 
+import java.util.Objects;
+
 import org.eclipse.aether.RepositorySystemSession;
 import org.eclipse.aether.repository.RemoteRepository;
 import org.eclipse.aether.spi.connector.transport.Transporter;
@@ -48,6 +50,7 @@ public class ConcordHttpTransporterFactory
         // enables default constructor
     }
 
+    @Override
     public float getPriority()
     {
         return priority;
@@ -55,7 +58,7 @@ public class ConcordHttpTransporterFactory
 
     /**
      * Sets the priority of this component.
-     * 
+     *
      * @param priority The priority.
      * @return This component for chaining, never {@code null}.
      */
@@ -65,9 +68,13 @@ public class ConcordHttpTransporterFactory
         return this;
     }
 
+    @Override
     public Transporter newInstance( RepositorySystemSession session, RemoteRepository repository )
         throws NoTransporterException
     {
+        Objects.requireNonNull( "session", "session cannot be null" );
+        Objects.requireNonNull( "repository", "repository cannot be null" );
+
         return new HttpTransporter( repository, session );
     }
 
